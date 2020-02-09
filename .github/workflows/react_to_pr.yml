@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Branch cleanup
-        uses: jessfraz/branch-cleanup-action@master
+        uses: jessfraz/cleanup-pr-branch@master
         with: 
           token: ${{secrets.GITHUB_TOKEN}}
