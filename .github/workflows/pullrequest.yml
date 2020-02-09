@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: jessfraz/branch-cleanup-action@master
-     - with: 
+       with: 
         token: ${{secrets.GITHUB_TOKEN}}
