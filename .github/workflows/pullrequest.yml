@@ -1,9 +1,14 @@
 name: React-to-PR
 
-on: pull_request
-resolves: ["branch cleanup"]
+on: 
+  pull_request:
+    branches: 
+      - master
 
-action "branch cleanup" {
-  uses = "jessfraz/branch-cleanup-action@master"
-  secrets = ["GITHUB_TOKEN"]
-}
+jobs: 
+  branch_cleanup:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: jessfraz/branch-cleanup-action@master
+     - with: 
+        token: ${{secrets.GITHUB_TOKEN}}
