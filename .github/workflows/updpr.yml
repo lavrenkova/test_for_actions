@@ -13,6 +13,6 @@ jobs:
         title-template: '[%branch%]'
         title-prefix-space: true
         uppercase-title: true
-        body-template: '[Link to %branch%](https://url/to/browse/ticket/%branch%)'
+        body-template: '[Link to %branch%](https://https://github.com/lavrenkova/test_for_actions/%branch%)'
         body-prefix-newline-count: 2
         uppercase-body: true
