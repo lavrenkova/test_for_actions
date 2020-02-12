@@ -8,7 +8,6 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      # Do something ex. yarn install and execute get some file.
       - name: Commit push and pr
         uses: golfzaptw/action-commit-push-pr
         with:
