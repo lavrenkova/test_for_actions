@@ -1,0 +1,20 @@
+name: Update branches
+on:
+  schedule:
+    - cron: '0 0 * * *' # Daily
+    - cron: '0 0 * * 0' # Weekly
+    - cron: '0 0 1 * *' # Monthly
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      # Do something ex. yarn install and execute get some file.
+      - name: Commit push and pr
+        uses: golfzaptw/action-commit-push-pr
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PREFIX_BRANCHES: 'update'
+          DEFAULT_BRANCHES: 'develop'
+          COMMIT_MESSAGE: 'update value'
+          TITLE_PR: 'Chore: get some file update'
+          BODY_PR: ''
