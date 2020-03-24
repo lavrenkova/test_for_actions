@@ -1,3 +1,5 @@
+name: deployment
+
 on:
   pull_request:
     types: [opened]
