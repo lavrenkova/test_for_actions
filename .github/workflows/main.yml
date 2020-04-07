@@ -2,15 +2,20 @@ name: deployment
 
 on:
   pull_request:
-    types: [opened]
-    paths:
-    - '**.sql'
+    types: 
+      - closed
 
 jobs:
-  add-sql-reviews:
+  job1:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.0.1
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: ".github/auto_assign_sql.yml"
+    - name: Check out
+      uses: actions/checkout@v1
+
+    - name: get list of files in PR
+      if: github.event.pull_request.merged
+      run: |
+        URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
+          FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
+          echo $FILES
