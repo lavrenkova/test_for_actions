@@ -3,7 +3,14 @@ name: deployment
 on:
   pull_request:
     types: 
-      - closed
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
 
 jobs:
   job1:
