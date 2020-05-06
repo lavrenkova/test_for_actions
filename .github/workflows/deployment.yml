@@ -30,6 +30,11 @@ jobs:
         URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
           echo $FILES
-
-      
-             
+          
+    - name: Compare names
+      env:
+        PAPER_NAME_MD: paper.md
+        PAPER_NAME_DOCX: paper.docx
+        PAPER_NAME_PDF: paper.pdf
+      if: $FILES == PAPER_NAME_MD
+      run: echo ERROR
