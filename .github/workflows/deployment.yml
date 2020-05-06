@@ -36,5 +36,5 @@ jobs:
         PAPER_NAME_MD: paper.md
         PAPER_NAME_DOCX: paper.docx
         PAPER_NAME_PDF: paper.pdf
-      if: $FILES == PAPER_NAME_MD
+      if: ${{FILES == PAPER_NAME_MD}}
       run: echo ERROR
