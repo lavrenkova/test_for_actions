@@ -26,8 +26,8 @@ jobs:
         URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
           echo $FILES
-          if ($FILES != "paper.pdf") 
-            echo "Correct"
+          if ($FILES != "paper.docx paper.md paper.pdf") 
+            echo "Correct";
           
     - name: Compare names
       env:
