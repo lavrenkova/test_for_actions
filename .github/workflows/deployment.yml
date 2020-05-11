@@ -27,19 +27,4 @@ jobs:
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
           echo $FILES
           if ($FILES != "paper.docx paper.md paper.pdf") 
-            echo "Correct";
-          
-    - name: Compare names
-      env:
-        PAPER_NAME_MD: paper.md
-        PAPER_NAME_DOCX: paper.docx
-        PAPER_NAME_PDF: paper.pdf
-      uses: actions/github-script@0.9.0
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
-          paper_name_id = 'paper.pdf'
-          if ($FILES == paper_name_id)
-            print("Hello")
-          else
-            print("Bye")
+            echo "Correct"
