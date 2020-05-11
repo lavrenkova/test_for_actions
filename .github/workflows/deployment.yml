@@ -36,6 +36,8 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          const diff_url = context.payload.pull_request.diff_url
-          const result = await github.request(diff_url)
-          console.log(result.data.single_file_name)
+          paper_name_id = 'paper.pdf'
+          if ($FILES == paper_name_id)
+            print("Hello")
+          else
+            print("Bye")
