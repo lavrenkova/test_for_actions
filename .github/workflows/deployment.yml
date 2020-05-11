@@ -39,6 +39,4 @@ jobs:
           const diff_url = context.payload.pull_request.diff_url.file
           const result = await github.request(diff_url)
           console.log(result.data)
-          octokit.gists.create({
-            files
-          });
+
