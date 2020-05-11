@@ -38,11 +38,4 @@ jobs:
         script: |
           const diff_url = context.payload.pull_request.diff_url
           const result = await github.request(diff_url)
-          console.log(result.data)
-          for p in result.data:
-            source = decode_clean(p.source, "a/")
-            target = decode_clean(p.target, "b/")
-            if "paper.md" in source:
-              print("Hello")
-            else 
-              print("Bye")
+          console.log(result.data.single_file_name)
