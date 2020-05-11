@@ -36,11 +36,6 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          const { Octokit } = require("@octokit/rest");
           const diff_url = context.payload.pull_request.diff_url
           const result = await github.request(diff_url)
           console.log(result.data)
-          octokit.gists.create({
-           files
-          });
-
