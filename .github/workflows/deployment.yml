@@ -35,10 +35,8 @@ jobs:
       uses: actions/github-script@0.9.0
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
-        result-encoding: string
         script: |
           const diff_url = context.payload.pull_request.diff_url
           const result = await github.request(diff_url)
-          console.log(result)
-          return "I will be string (not JSON) encoded!"
+          console.log(result.data)
  
