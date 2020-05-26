@@ -1,6 +1,6 @@
-commands to checkout to this branch
+Здравствуйте, {branch_name}
 
 ```
-git fetch upstream pull/{pull_id}/head:{branch_name}
-git checkout {branch_name}
+Номер текущего PR: {pull_id}
+PR сделан из ветки {branch_name}
 ```
